@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="StudySprint.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>StudySprint | Master Your Subjects</title>
+    
+    <link href="~/Assets/css/style.css" rel="stylesheet" type="text/css" runat="server" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <asp:contentplaceholder id="head" runat="server"></asp:contentplaceholder>
+</head>
+
+<body>
+
+    <form id="form1" runat="server">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">
+                    <img src="~/Assets/img/studysprint_logo.png" runat="server" alt="StudySprint Logo"/>
+                </a>
+            </div>
+    
+            <ul class="nav-links">
+                <asp:placeholder id="phGuest" runat="server">
+                    <li><a href="~/Pages/Default.aspx" runat="server">Home</a></li>
+                    <li><a href="~/Pages/Login.aspx" runat="server">Login</a></li>
+                    <li><a href="~/Pages/Register.aspx" runat="server">Register</a></li>
+                </asp:placeholder>
+
+                <asp:placeholder id="phStudent" runat="server" visible="false">
+                    <li><a href="~/Pages/Student/StudentDashboard.aspx" runat="server">Dashboard</a></li>
+                    <li><a href="~/Pages/Student/QuizHub/QuizHub.aspx" runat="server">Quiz Hub</a></li>
+                    <li><a href="~/Pages/Student/MyProgress/MyProgress.aspx" runat="server">My Progress</a></li>
+                    <li><a href="~/Pages/Student/Profile/Profile.aspx" runat="server">Profile</a></li>
+                    <li>
+                        <asp:linkbutton id="btnLogoutStudent" runat="server" onclick="btnLogout_Click" causesvalidation="false" onclientclick="return confirm('Are you sure you want to logout?');">Logout</asp:linkbutton>
+                    </li>
+                </asp:placeholder>
+
+                <asp:placeholder id="phAdmin" runat="server" visible="false">
+                    <li><a href="~/Pages/Admin/AdminDashboard.aspx" runat="server">Dashboard</a></li>
+                    <li><a href="~/Pages/Admin/ManageQuizzes/ManageQuizzes.aspx" runat="server">Quizzes</a></li>
+                    <li><a href="~/Pages/Admin/QuestionsBank/ManageQuestions.aspx" runat="server">Questions</a></li>
+                    <li><a href="~/Pages/Admin/ManageStudent/ManageStudents.aspx" runat="server">Students</a></li>
+                    <li>
+                        <asp:linkbutton id="btnLogoutAdmin" runat="server" onclick="btnLogout_Click" causesvalidation="false" onclientclick="return confirm('Are you sure you want to logout?');">Logout</asp:linkbutton>
+                    </li>
+                </asp:placeholder>
+            </ul>
+        </nav>
+
+
+        <main class="content-wrapper">
+            <asp:contentplaceholder id="MainContent" runat="server">
+            </asp:contentplaceholder>
+        </main>
+
+        <footer class="main-footer">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <img src="~/Assets/img/studysprint_logo.png" runat="server" alt="StudySprint Logo"/>
+                </div>
+                <div class="footer-slogan">Master your subjects, one sprint at a time.</div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-copyright">
+                    @2026 StudySprint All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </form>
+
+</body>
+</html>
