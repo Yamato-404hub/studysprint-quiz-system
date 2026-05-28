@@ -1,6 +1,5 @@
 # studysprint-quiz-system
 ASP.NET-based quiz and result management system with timer and review features.
-# StudySprint Quiz System
 
 ## Overview
 StudySprint is a web-based quiz and result management system developed using ASP.NET and SQL Server.
